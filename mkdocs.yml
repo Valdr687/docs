@@ -6,7 +6,6 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/Valdr687/docs
 theme:
-  logo: icon.png
   features:
     - navigation.footer
   name: material
