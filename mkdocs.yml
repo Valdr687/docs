@@ -1,7 +1,12 @@
 site_name: Vervada - Documentation
 site_url: https://vervda.me/docs
 copyright: Licensed under CC BY-SA 4.0 International License - Thomas "Valdr687" Casanova
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Valdr687/docs
 theme:
+  logo: icon.png
   features:
     - navigation.footer
   name: material
