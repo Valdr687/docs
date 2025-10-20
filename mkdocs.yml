@@ -1,7 +1,10 @@
-site_name: My MkDocs Material Documentation
-site_url: https://sitename.example
+site_name: Vervada - Documentation
+site_url: https://vervda.me/docs
+copyright: Licensed under CC BY-SA 4.0 International License - Thomas "Valdr687" Casanova
 theme:
-  name: material
+  features:
+    - navigation.footer
+  name: Vervada's docks
   palette:
     # Dark Mode
     - scheme: slate
@@ -18,3 +21,72 @@ theme:
         name: Light mode
       primary: blue
       accent: deep orange
+
+markdown_extensions:
+  - footnotes
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.tilde
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+  
+nav :
+  - Home : index.md
+  - Gestion de projet :
+    - Fondamentaux de la gestion de projet : gestion_de_projet/s1.md
+    - L'essentiel pour démarrer un projet : gestion_de_projet/s2.md
+    - Outils avancés de gestion de projet : gestion_de_projet/s3.md
+    - Démarche de gestion des risques : gestion_de_projet/s4.md
+  - Informatique :
+    - Binaire : informatique/0_binaire.md
+    - Tracé de courbe : informatique/1_trace_de_courbe.md
+    - Fichiers textes : informatique/2_fichiers_textes.md
+    - Stratégies : informatique/3_strategies.md
+    - Complexité : informatique/4_complexite.md
+    - Traitement de données : informatique/5_traitement_de_donnees.md
+    - Analyse : informatique/6_analyse.md
+    - SQL : informatique/7_sql.md
+    - IA : informatique/8_ia.md
+  - Anglais :
+    - Home : english/index.md
+    - Générique :
+      - Grammaire : english/generic/0_grammar.md
+      - Vocabulaire en vrac : english/generic/1_miscellaneous.md
+    - Thématiques :
+      - Science : english/themed/1_science.md
+      - The Media : english/themed/2_the_media.md
+      - Work : english/themed/3_work.md
+      - The institutions : english/themed/4_institutions.md
+      - Environment : english/themed/5_environment.md
+      - Violences : english/themed/6_violences.md
+      - Society : english/themed/7_society.md
+  - Espagnol :
+    - Home : spanish/index.md
+    - Genérico :
+      - Gramática : spanish/generic/0_grammar.md
+      - Vocabulario variado : spanish/generic/1_miscellaneous.md
+    - Temáticas :
+      - Ciencia : spanish/themed/1_ciencia.md
+      - Los medios de comunicación : spanish/themed/2_los_medios.md
+      - El trabajo : spanish/themed/3_el_trabajo.md
+      - Las instituciones : spanish/themed/4_las_instituciones.md
+      - Medio ambiente : spanish/themed/5_medio_ambiente.md
+      - Violencias : spanish/themed/6_violencias.md
+      - Sociedad : spanish/themed/7_sociedad.md
+      
