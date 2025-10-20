@@ -1,17 +1,14 @@
-# Welcome to MkDocs
+# Bienvenue
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Ces documents rassemblent des notes et des cours que j'ai rassemblés au fil du temps sur divers sujets.
 
-## Commands
+## Contenu
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+* [Gestion de projet](./gestion_de_projet/s1.md)
+* [English Vocabulary and Cheat Sheet](./english/index.md)
+* [Spanish Vocabulary and Cheat Sheet](./spanish/index.md)
+* [Informatique](./informatique/0_binaire.md)
 
-## Project layout
+## Licence
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Ce contenu est mis à disposition sous licence [Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.fr).

@@ -8,15 +8,16 @@ Each themed sheet includes a an introduction, cultural references and a vocabula
 ## Contents
 
 * Generic content
-    * [Grammar](./Generic/0%20-%20Grammaire.md)
-    * [Synthèse et autres mots pratiques](./Generic/1%20-%20Utile.md)
+    * [Grammar](./generic/0_grammar.md)
+    * [Miscellaneous vocabulary](./generic/1_miscellaneous.md)
 * Themed
-    * [Sciences](./Themed/1%20-%20Sciences.md)
-    * [The media](./Themed/2%20-%20The%20media.md)
-    * [World of work](./Themed/3%20-%20Work.md)
-    * [The institutions](./Themed/4%20-%20Institutions.md)
-    * [The environment](./Themed/5%20-%20Environment.md)
-    * [Violences](./Themed/6%20-%20Violences.md)
+    * [Science](./themed/1_science.md)
+    * [Media](./themed/2_the_media.md)
+    * [Work](./themed/3_work.md)
+    * [Institutions](./themed/4_institutions.md)
+    * [Environment](./themed/5_environment.md)
+    * [Violence](./themed/6_violences.md)
+    * [Society](./themed/7_society.md)
 
 ***
 

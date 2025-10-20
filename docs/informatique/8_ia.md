@@ -16,7 +16,7 @@ Le therme d'IA désigne des méthodes qui permettent d'effectuer des prises de d
 
 On divise généralement les problèmes d'apprentissage en trois catégories :
 
-1. **Apprentissage supervisé** : on connaît le lien entre les données, l'algorithme cherche à l'apprendre. Exemples : [k-NN](#knn), [régression](#régression), [réseaux de neurones](#réseaux-de-neurones).
+1. **Apprentissage supervisé** : on connaît le lien entre les données, l'algorithme cherche à l'apprendre. Exemples : [k-NN](#knn), [régression](#regression), [réseaux de neurones](#reseaux-de-neurones).
 1. **Apprentissage non supervisé** : on ne connaît pas le lien entre les données, l'algorithme cherche à le découvrir. Exemple : [k-means](#k-means).
 1. **Apprentissage par renforcement** : pas de données étiquetées; un agent apprend une politique en interagissant avec un environnement et en recevant des **récompenses** (positives/négatives).
 

@@ -4,7 +4,7 @@ copyright: Licensed under CC BY-SA 4.0 International License - Thomas "Valdr687"
 theme:
   features:
     - navigation.footer
-  name: Vervada's docks
+  name: material
   palette:
     # Dark Mode
     - scheme: slate
@@ -81,11 +81,12 @@ nav :
     - Genérico :
       - Gramática : spanish/generic/0_grammar.md
       - Vocabulario variado : spanish/generic/1_miscellaneous.md
+      - Políticos : spanish/generic/2_politicos.md
     - Temáticas :
       - Ciencia : spanish/themed/1_ciencia.md
       - Los medios de comunicación : spanish/themed/2_los_medios.md
-      - El trabajo : spanish/themed/3_el_trabajo.md
-      - Las instituciones : spanish/themed/4_las_instituciones.md
+      - El trabajo : spanish/themed/3_trabajo.md
+      - Las instituciones : spanish/themed/4_instituciones.md
       - Medio ambiente : spanish/themed/5_medio_ambiente.md
       - Violencias : spanish/themed/6_violencias.md
       - Sociedad : spanish/themed/7_sociedad.md
