@@ -220,10 +220,10 @@ On utilise alors des réseaux de neurones qui sont des ensembles de neurones org
 Un réseau de neurones est constitué de plusieurs couches de neurones interconnectés. Cette interconnexion se fait entre couches successives :
 
 - une **couche d'entrée** qui réalise une simple copie  
-  - des couches intermédiaires (ou **couches cachées**)  
-    - qui ont des nombres de neurones différents mais  
-    - qui ont **la même fonction d'activation**  
-  - une **couche de sortie**
+    - des couches intermédiaires (ou **couches cachées**)  
+        - qui ont des nombres de neurones différents mais  
+        - qui ont **la même fonction d'activation**  
+    - une **couche de sortie**
 
 ```mermaid
 flowchart LR
