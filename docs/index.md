@@ -5,10 +5,10 @@ Cette plateforme a pour but de centraliser des ressources pédagogiques que j'ai
 ## Contenu
 
 * Classes préparatoires
-  * [Informatique](./informatique/0_binaire.md)
+    * [Informatique](./informatique/0_binaire.md)
 * Centraliens 
-  * [Gestion de projet](./gestion_de_projet/s1.md)
-  * [RSE et VSS](./egalite/index.md)
+    * [Gestion de projet](./gestion_de_projet/s1.md)
+    * [RSE et VSS](./egalite/index.md)
 * [Fiches de révision pour l'anglais](./english/index.md)
 * [Fiches de révision pour l'espagnol](./spanish/index.md)
 
