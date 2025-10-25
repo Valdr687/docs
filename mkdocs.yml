@@ -52,11 +52,14 @@ extra_css:
   
 nav :
   - Home : index.md
-  - Gestion de projet :
-    - Fondamentaux de la gestion de projet : gestion_de_projet/s1.md
-    - L'essentiel pour démarrer un projet : gestion_de_projet/s2.md
-    - Outils avancés de gestion de projet : gestion_de_projet/s3.md
-    - Démarche de gestion des risques : gestion_de_projet/s4.md
+  - Centrale :
+    - RSE et VSS :
+      - Introduction : egalite/index.md
+    - Gestion de projet :
+      - Fondamentaux de la gestion de projet : gestion_de_projet/s1.md
+      - L'essentiel pour démarrer un projet : gestion_de_projet/s2.md
+      - Outils avancés de gestion de projet : gestion_de_projet/s3.md
+      - Démarche de gestion des risques : gestion_de_projet/s4.md
   - Informatique :
     - Binaire : informatique/0_binaire.md
     - Tracé de courbe : informatique/1_trace_de_courbe.md
