@@ -1,0 +1,2553 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://vervda.me/docs/gestion_de_projet/s3/">
+      
+      
+        <link rel="prev" href="../s2/">
+      
+      
+        <link rel="next" href="../s4/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Outils avancés de gestion de projet - Vervada - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#outils-avances-de-gestion-de-projet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vervada - Documentation" class="md-header__button md-logo" aria-label="Vervada - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vervada - Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Outils avancés de gestion de projet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vervada - Documentation" class="md-nav__button md-logo" aria-label="Vervada - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vervada - Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Centrale
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Centrale
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    RSE et VSS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            RSE et VSS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../egalite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gestion de projet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Gestion de projet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fondamentaux de la gestion de projet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L'essentiel pour démarrer un projet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Outils avancés de gestion de projet
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Outils avancés de gestion de projet
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparer-un-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Préparer un projet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Préparer un projet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#charte-de-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charte de projet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Charte de projet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quel-contenu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quel contenu ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cadrage-deroulement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadrage &amp; déroulement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-lots-et-les-responsabilites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les lots et les responsabilités
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-matrice-raci" class="md-nav__link">
+    <span class="md-ellipsis">
+      La matrice RACI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La matrice RACI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les rôles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mise en place
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-planification-diagramme-de-gantt" class="md-nav__link">
+    <span class="md-ellipsis">
+      La planification : Diagramme de Gantt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-montage-dun-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le montage d'un projet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-planification" class="md-nav__link">
+    <span class="md-ellipsis">
+      La planification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La planification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charge-de-travail-et-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charge de travail et budget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Charge de travail et budget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budget
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-montage-global-dun-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le montage global d’un projet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le montage global d’un projet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cycle-de-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cycle de projet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodes-agiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes agiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodes agiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodes-agiles-fondamentaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes agiles : fondamentaux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodes agiles : fondamentaux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principes-communs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principes communs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cycles-des-methodes-agiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cycles des méthodes agiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lecons-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leçons principales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limites-et-conditions-dapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limites et conditions d’application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Démarche de gestion des risques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Informatique
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Informatique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatique/0_binaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatique/1_trace_de_courbe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tracé de courbe
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatique/2_fichiers_textes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fichiers textes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatique/3_strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stratégies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatique/4_complexite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complexité
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatique/5_traitement_de_donnees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Traitement de données
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatique/6_analyse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Analyse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatique/7_sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../informatique/8_ia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Anglais
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Anglais
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Générique
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Générique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/generic/0_grammar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grammaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/generic/1_miscellaneous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vocabulaire en vrac
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Thématiques
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Thématiques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/1_science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Science
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/2_the_media/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Media
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/3_work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Work
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/4_institutions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The institutions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/5_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Environment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/6_violences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Violences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/7_society/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Society
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Espagnol
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Espagnol
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Genérico
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Genérico
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/generic/0_grammar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gramática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/generic/1_miscellaneous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vocabulario variado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/generic/2_politicos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Políticos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Temáticas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Temáticas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/1_ciencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ciencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/2_los_medios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Los medios de comunicación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/3_trabajo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    El trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/4_instituciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Las instituciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/5_medio_ambiente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Medio ambiente
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/6_violencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Violencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/7_sociedad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sociedad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparer-un-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Préparer un projet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Préparer un projet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#charte-de-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charte de projet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Charte de projet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quel-contenu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quel contenu ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cadrage-deroulement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadrage &amp; déroulement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-lots-et-les-responsabilites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les lots et les responsabilités
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-matrice-raci" class="md-nav__link">
+    <span class="md-ellipsis">
+      La matrice RACI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La matrice RACI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les rôles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mise-en-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mise en place
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-planification-diagramme-de-gantt" class="md-nav__link">
+    <span class="md-ellipsis">
+      La planification : Diagramme de Gantt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-montage-dun-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le montage d'un projet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-planification" class="md-nav__link">
+    <span class="md-ellipsis">
+      La planification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La planification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charge-de-travail-et-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charge de travail et budget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Charge de travail et budget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budget
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-montage-global-dun-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le montage global d’un projet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le montage global d’un projet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cycle-de-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cycle de projet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodes-agiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes agiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodes agiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodes-agiles-fondamentaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes agiles : fondamentaux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodes agiles : fondamentaux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principes-communs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principes communs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cycles-des-methodes-agiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cycles des méthodes agiles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lecons-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leçons principales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limites-et-conditions-dapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limites et conditions d’application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="outils-avances-de-gestion-de-projet">Outils avancés de gestion de projet</h1>
+<blockquote>
+<p>Adapté de "Outils avancés de gestion de projet" - MOOC GdP | Contenu sous licence CC BY-SA-NC 4.0</p>
+</blockquote>
+<h2 id="preparer-un-projet">Préparer un projet</h2>
+<p>Pour cadrer et préparer un projet on utilise une lettre de mission, un cahier des charges, une note de cadrage et une charte de projet.</p>
+<h3 id="charte-de-projet">Charte de projet</h3>
+<p><strong>Pourquoi ?</strong></p>
+<ul>
+<li>
+<p>Justifie la raison d'être du projet (Attendus et impact)
+<strong>Décrit</strong></p>
+</li>
+<li>
+<p>Livrables</p>
+</li>
+<li>
+<p>Budget
+<strong>Soutient la prise de décision</strong></p>
+</li>
+<li>
+<p>Quels rôles ?</p>
+</li>
+<li>
+<p>Est un outil de communication
+<strong>Officialise l'existence du projet</strong></p>
+</li>
+<li>
+<p>Rédigée par le futur chef de projet (ou par le commanditaire / un expert)</p>
+</li>
+<li>Validée par les décideurs : maître d’ouvrage, hiérarchie, sponsor
+<strong>Anticipe le déroulement</strong></li>
+</ul>
+<h4 id="quel-contenu">Quel contenu ?</h4>
+<ul>
+<li>
+<p>Résumé (Format <em>Executive summary</em>)</p>
+</li>
+<li>
+<p>Cadrage</p>
+<ul>
+<li>Contexte / Hypothèses de départ</li>
+<li>Finalité et importance du projet</li>
+<li>Objectifs et résultats opérationnels</li>
+</ul>
+</li>
+<li>Déroulement du projet<ul>
+<li>Organisation / ressource, budget</li>
+<li>Jalons : échéanciers / événements important</li>
+<li>Risques et opportunités</li>
+</ul>
+</li>
+</ul>
+<h4 id="cadrage-deroulement">Cadrage &amp; déroulement</h4>
+<ul>
+<li>
+<p><strong>Cadrage</strong></p>
+<ul>
+<li>présentation du contexte,</li>
+<li>explicitation des finalités du projet et examen de sa rentabilité pour justifier son existence: c’est le <em>Business case</em>.<ul>
+<li>raisons pour lesquelles le projet est lancé,</li>
+<li>bénéfices attendus,</li>
+<li>les coûts prévisibles,</li>
+<li>les forces et faiblesses.</li>
+<li>Sa synthèse est reprise sur une analyse SWOT.</li>
+</ul>
+</li>
+<li>Reprise du cahier des charges : liste exhaustive des livrables <span class="arithmatex">\(\rightarrow\)</span> produits, services, documentation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Déroulement</strong></p>
+<ul>
+<li>Définir les rôles et responsabilités, le pilotage du projet et son budget ;</li>
+<li>Le temps avec les principaux jalons ;</li>
+<li>Et enfin les risques et opportunités.</li>
+</ul>
+</li>
+</ul>
+<h2 id="les-lots-et-les-responsabilites">Les lots et les responsabilités</h2>
+<p>Une fois le projet lancé un facteur de réussite critique est la division du projet en lots de travail ou <em>work packages</em>. On parle de découpage <em>WBS</em>, cette opération permet de :</p>
+<ul>
+<li>Réduire la complexité du projet pour le piloter</li>
+<li>Préparer son pilotage</li>
+</ul>
+<p>Le WBS est définit comme la "décomposition hiérarchique [...] du travail que l’équipe de projet doit exécuter pour atteindre les objectifs et produire les livrables”. Pour le construire il faut passer de la logique "que faire" à "comment le faire".</p>
+<p><strong>Comment réaliser ce découpage ?</strong></p>
+<p>Pour chaque tâche principale, on procède par analyse, autrement dit par décompositions successives. La somme des tâches principales constitue le projet.</p>
+<p>Pour chaque tâche principale, on décompose selon un critère donné. Par exemple le métier qui réalise le travail, la localisation du chantier, l’ordre de succession.
+Attention à utiliser une seule logique à la fois !</p>
+<p>Chaque lot de travail doit être SMART.</p>
+<p><strong>Exemple</strong></p>
+<p><img alt="Pasted image 20251009090648.png" src="../images/Pasted%20image%2020251009090648.png" /></p>
+<h2 id="la-matrice-raci">La matrice RACI</h2>
+<p>La matrice RACI est un outil qui permet de distribuer les rôles et les lots de travail. Elle précise quatres types de responsabilités : celui qui réalise, celui qui a l’autorité, la personne qui est consultée et celle qui est informée. Pour la réaliser on part du WBS.</p>
+<p><img alt="Pasted image 20251009090737.png" src="../images/Pasted%20image%2020251009090737.png" /></p>
+<h3 id="les-roles">Les rôles</h3>
+<ul>
+<li>R :<ul>
+<li><em>Réalise, Responsible</em></li>
+<li>membres opérationnels</li>
+<li>exécutent la tâche</li>
+</ul>
+</li>
+<li>A :<ul>
+<li>autorité, doit rendre des comptes</li>
+<li><em>Accountable</em></li>
+</ul>
+</li>
+<li>C :<ul>
+<li><em>Consulted</em></li>
+<li>Experts</li>
+</ul>
+</li>
+<li>I :<ul>
+<li><em>informed</em></li>
+<li>Doivent être tenus informés mais on n'attend pas leur retour</li>
+</ul>
+</li>
+</ul>
+<h3 id="mise-en-place">Mise en place</h3>
+<ul>
+<li>Un seul <em>A</em> par action : une seule personne à l'autorité finale.</li>
+<li>Au moins un <em>R</em>.<ul>
+<li>Un seul acteur peut cumuler <em>A</em> et <em>R</em></li>
+</ul>
+</li>
+<li>Multiplier les <em>C</em> ralenti le projet, il faut donc consulter directement les experts les plus efficaces.</li>
+<li>Pour le <em>I</em> c’est plus simple : gardez tous les acteurs du projet régulièrement informés, sinon on vous reprochera de mal communiquer.</li>
+<li>Il faut préciser sur la matrice la signification des lettres !</li>
+</ul>
+<h2 id="la-planification-diagramme-de-gantt">La planification : Diagramme de Gantt</h2>
+<p><strong>Étapes :</strong></p>
+<ol>
+<li><strong>Séquencement</strong> des work packages pour identifier les dépendances et périodes critiques.</li>
+<li><strong>Diagramme de Gantt :</strong><ul>
+<li>Visualisation temporelle des tâches et jalons.</li>
+<li>Identification du <strong>chemin critique</strong>.</li>
+<li>Suivi de l’avancement et des retards.</li>
+</ul>
+</li>
+<li><strong>Charge de travail et budget :</strong><ul>
+<li>Charge exprimée en <strong>jours-homme</strong>.</li>
+<li>Ressources : humaines, matérielles, financières.</li>
+</ul>
+</li>
+</ol>
+<h2 id="le-montage-dun-projet">Le montage d'un projet</h2>
+<p><strong>Objectif :</strong> gérer le <strong>cycle de vie complet du projet</strong>.</p>
+<ul>
+<li><strong>Les 4 phases :</strong><ol>
+<li><strong>Définition</strong> : objectifs, charte, cahier des charges.</li>
+<li><strong>Montage</strong> : WBS, RACI, Gantt.</li>
+<li><strong>Exécution</strong> : suivi, pilotage, prototypes.</li>
+<li><strong>Clôture</strong> : livraison, post-mortem, réaffectation.</li>
+</ol>
+</li>
+<li><strong>5 questions clés :</strong><ol>
+<li>Que veut le client ?</li>
+<li>Qu’est-ce qu’il faut faire ? (WBS)</li>
+<li>Qui fait quoi ? (RACI)</li>
+<li>Quand le faire ? (Gantt)</li>
+<li>Avec quelles ressources ? (budget)  </li>
+</ol>
+</li>
+</ul>
+<p><strong>À retenir :</strong> Le management du projet est un enchaînement logique et cohérent d’outils et de décisions.</p>
+<h2 id="la-planification">La planification</h2>
+<p>À partir du WBS il faut d’abord définir la succession des lots de travail et les dépendances. Le diagramme de Gantt sert à :</p>
+<ul>
+<li>définir un planning réaliste,</li>
+<li>suivre l’avancement et détecter les retards et leurs impacts,</li>
+<li>communiquer avec le client et les parties prenantes</li>
+<li>Identifier les périodes critiques.</li>
+</ul>
+<h3 id="construction">Construction</h3>
+<p>Le Gantt doit etre construit après le WBS, il faut établir l’ordre de succession de chaque lot.</p>
+<p><strong>Mettre en œuvre le Gantt.</strong></p>
+<ul>
+<li>Principe : temps horizontal, tâches verticales.</li>
+<li>
+<p>Éléments graphiques : barres = lots de travail ; losanges = jalons.</p>
+</li>
+<li>
+<p><em>Utilités du Gantt établi avant projet :</em></p>
+<ul>
+<li>récapituler lots et durées ;</li>
+<li>planifier jalons et tâches ;</li>
+<li>indiquer liens entre tâches ;</li>
+<li>prendre en compte disponibilités et interruptions ;</li>
+<li>mettre en évidence le chemin critique qui détermine la date de fin.</li>
+</ul>
+</li>
+<li>
+<p><em>Utilités en mode pilotage :</em></p>
+<ul>
+<li>indiquer l’avancement de chaque lot ;</li>
+<li>comparer l’avancement à la date courante ;</li>
+<li>actualiser le suivi et recalculer le chemin critique.</li>
+</ul>
+</li>
+<li>
+<p>Avertissement : la mise à jour du Gantt est exigeante. Le chef de projet doit faire le point d’avancement de toutes les tâches.</p>
+</li>
+</ul>
+<h3 id="charge-de-travail-et-budget">Charge de travail et budget</h3>
+<h4 id="workload"><em>Workload</em></h4>
+<p>Pour chiffre les works package on utilise la notion de <em>Charge de travail</em> = temps-homme requis (<em>workload</em>).</p>
+<ul>
+<li>Distinction charge vs durée : ex. 4 jours-homme = 4j pour 1 personne, ou 2j pour 2 personnes, ou 8j si personne à mi-temps.</li>
+</ul>
+<h4 id="budget">Budget</h4>
+<ul>
+<li>Trois types de consommation chiffrées dans le budget :<ol>
+<li>Ressources humaines (jours-homme).</li>
+<li>Investissements et amortissements (licences, locaux, machines).</li>
+<li>Entrées-sorties financières (trésorerie / cash).</li>
+</ol>
+</li>
+<li>Rôles du budget : chiffrer les ressources et la faisabilité en phase d’amorçage ; contrôler l’avancement en cours de projet.</li>
+</ul>
+<h2 id="le-montage-global-dun-projet">Le montage global d’un projet</h2>
+<p><img alt="Pasted image 20251009093704.png" src="../images/Pasted%20image%2020251009093704.png" /></p>
+<h3 id="cycle-de-projet">Cycle de projet</h3>
+<ol>
+<li>
+<p><strong>Définition</strong></p>
+<ul>
+<li>Objectif : établir des objectifs et obtenir l’approbation pour démarrer.</li>
+<li>Outils : SWOT, triangle Qualité-Coûts-Délais, carte des partenaires.</li>
+<li>Documents : cahier des charges, charte projet.</li>
+<li>Outils opérationnels de démarrage : compte-rendu, todo list.</li>
+</ul>
+</li>
+<li>
+<p><strong>Montage</strong></p>
+<ul>
+<li>Objectif : préparer le projet en détail.</li>
+<li>Outils : découpage en lots (WBS), clarification des responsabilités (matrice RACI), diagramme de Gantt pour le calendrier.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exécution</strong></p>
+<ul>
+<li>Objectif : réaliser le projet.</li>
+<li>Activités : pilotage de l’avancement, suivi détaillé des risques, production de livrables intermédiaires (maquettes, prototypes, tests).</li>
+</ul>
+</li>
+<li>
+<p><strong>Clôture</strong></p>
+<ul>
+<li>Objectif : livrer et clore formellement.</li>
+<li>Activités : mise en production, transfert au maître d’ouvrage, formation des utilisateurs, réunion de bilan (post-mortem), capitalisation du retour d’expérience, réaffectation des ressources.</li>
+</ul>
+</li>
+</ol>
+<p>Concevoir logiquement un projet : 5 questions à résoudre (ordre et correspondance outils).</p>
+<ol>
+<li>Quel est le besoin client et quelles sont les contraintes ? → charte, cahier des charges.</li>
+<li>Qu’est-ce qui doit être fait et comment découper en work packages ? → WBS.</li>
+<li>Qui coordonne, réalise et valide chaque tâche ? → matrice RACI.</li>
+<li>Quelle est la durée et l’ordre des tâches ? Comment estimer la charge ? → estimations, séquencement, Gantt.</li>
+<li>Quel budget et quelles ressources sont nécessaires ? → chiffrage des ressources humaines, investissements, trésorerie</li>
+</ol>
+<h2 id="methodes-agiles">Méthodes agiles</h2>
+<h3 id="introduction">Introduction</h3>
+<p>L’approche classique est séquentielle et documentée. Les méthodes agiles en proposent une alternative, critiquant l'approche classique :</p>
+<ul>
+<li>cahier des charges incomplet ou évolutif ;</li>
+<li>forte charge de coordination et de reporting ;</li>
+<li>détection tardive des risques ;</li>
+<li>documentation lourde pour planifier l’intégralité du projet.</li>
+</ul>
+<h3 id="methodes-agiles-fondamentaux">Méthodes agiles : fondamentaux</h3>
+<h4 id="principes-communs">Principes communs</h4>
+<ul>
+<li>cycles courts produisant versions successives ;</li>
+<li>implication continue du client pour validation et précision du besoin ;</li>
+<li>autonomie des équipes pour décider ;</li>
+<li>livrable incrémental (test puis amélioration) ;</li>
+<li>timeboxes suivies d’un bilan.</li>
+</ul>
+<h4 id="cycles-des-methodes-agiles">Cycles des méthodes agiles</h4>
+<p><img alt="Pasted image 20251009094009.png" src="../images/Pasted%20image%2020251009094009.png" /></p>
+<ul>
+<li>Début : estimer la faisabilité.</li>
+<li>Backlog : liste priorisée de tous les besoins.</li>
+<li>Sprints : séquences courtes pour satisfaire des éléments du backlog.</li>
+<li>Test après chaque sprint puis mise à jour du backlog.</li>
+<li>Le projet = suite de sprints, tests et adaptations conduisant à des releases.</li>
+</ul>
+<h4 id="lecons-principales">Leçons principales</h4>
+<ol>
+<li>Ne pas réaliser le livrable une fois à la fin.</li>
+<li>Chercher des résultats tangibles immédiatement.</li>
+<li>Prioriser les fonctionnalités à forte valeur client.</li>
+<li>Adapter le projet dès l’apparition d’un problème.</li>
+</ol>
+<h4 id="limites-et-conditions-dapplication">Limites et conditions d’application</h4>
+<ul>
+<li>Domaines adaptés : projets de taille modeste, développement logiciel.</li>
+<li>Conditions nécessaires : disponibilité continue du client ; équipe formée et expérimentée ; forte autodiscipline ; capacité à travailler en autonomie ; bonne résistance au stress.</li>
+<li>Difficile à appliquer à grande échelle, notamment si le travail est largement sous-traité.</li>
+<li>Estimation du budget et des coûts difficile en mode agile en l’absence de phase de conception et de vision globale initiale.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../s2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: L&#39;essentiel pour démarrer un projet">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                L'essentiel pour démarrer un projet
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../s4/" class="md-footer__link md-footer__link--next" aria-label="Next: Démarche de gestion des risques">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Démarche de gestion des risques
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Licensed under CC BY-SA 4.0 International License - Thomas "Valdr687" Casanova
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Valdr687/docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

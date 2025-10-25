@@ -1,0 +1,2557 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://vervda.me/docs/informatique/8_ia/">
+      
+      
+        <link rel="prev" href="../7_sql/">
+      
+      
+        <link rel="next" href="../../english/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>IA - Vervada - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vervada - Documentation" class="md-header__button md-logo" aria-label="Vervada - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vervada - Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vervada - Documentation" class="md-nav__button md-logo" aria-label="Vervada - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vervada - Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Centrale
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Centrale
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    RSE et VSS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            RSE et VSS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../egalite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gestion de projet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Gestion de projet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gestion_de_projet/s1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fondamentaux de la gestion de projet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gestion_de_projet/s2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L'essentiel pour démarrer un projet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gestion_de_projet/s3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Outils avancés de gestion de projet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gestion_de_projet/s4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Démarche de gestion des risques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Informatique
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Informatique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0_binaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_trace_de_courbe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tracé de courbe
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_fichiers_textes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fichiers textes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stratégies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_complexite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complexité
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_traitement_de_donnees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Traitement de données
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_analyse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Analyse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7_sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    IA
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    IA
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typologie-des-problemes-dapprentissage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typologie des problèmes d'apprentissage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Typologie des problèmes d&#39;apprentissage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concernant-les-donnees-dentree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concernant les données d'entrée
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesures-de-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesures de performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesures de performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#en-classification-binaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      En classification binaire
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      En régression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classification-multi-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification multi-classes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-bref" class="md-nav__link">
+    <span class="md-ellipsis">
+      En bref
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Régression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Régression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regression-lineaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Régression linéaire
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Régression linéaire">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonction-cout-et-descente-de-gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonction coût et descente de gradient
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression-logistique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Régression logistique
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#knn-et-k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      KNN et K-means
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KNN et K-means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      KNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-means
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reseaux-de-neurones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Réseaux de neurones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réseaux de neurones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perceptron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perceptron
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perceptron">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonctionnement-mathematique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctionnement mathématique
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apprentissage-et-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apprentissage et limites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseau-de-neurones-perceptron-multicouche" class="md-nav__link">
+    <span class="md-ellipsis">
+      Réseau de neurones - Perceptron multicouche
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apprentissage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apprentissage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apprentissage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critere-darret-risque-de-sur-apprentissage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critère d'arrêt - Risque de sur-apprentissage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparaison-des-methodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparaison des méthodes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Anglais
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Anglais
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Générique
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Générique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/generic/0_grammar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grammaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/generic/1_miscellaneous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vocabulaire en vrac
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Thématiques
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Thématiques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/1_science/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Science
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/2_the_media/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Media
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/3_work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Work
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/4_institutions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The institutions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/5_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Environment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/6_violences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Violences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../english/themed/7_society/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Society
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Espagnol
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Espagnol
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Genérico
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Genérico
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/generic/0_grammar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gramática
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/generic/1_miscellaneous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vocabulario variado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/generic/2_politicos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Políticos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Temáticas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Temáticas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/1_ciencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ciencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/2_los_medios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Los medios de comunicación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/3_trabajo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    El trabajo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/4_instituciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Las instituciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/5_medio_ambiente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Medio ambiente
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/6_violencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Violencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spanish/themed/7_sociedad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sociedad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typologie-des-problemes-dapprentissage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typologie des problèmes d'apprentissage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Typologie des problèmes d&#39;apprentissage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concernant-les-donnees-dentree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concernant les données d'entrée
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesures-de-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesures de performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesures de performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#en-classification-binaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      En classification binaire
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      En régression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classification-multi-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification multi-classes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-bref" class="md-nav__link">
+    <span class="md-ellipsis">
+      En bref
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Régression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Régression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regression-lineaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Régression linéaire
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Régression linéaire">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonction-cout-et-descente-de-gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonction coût et descente de gradient
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression-logistique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Régression logistique
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#knn-et-k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      KNN et K-means
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KNN et K-means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      KNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-means
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reseaux-de-neurones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Réseaux de neurones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réseaux de neurones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perceptron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perceptron
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perceptron">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonctionnement-mathematique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctionnement mathématique
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apprentissage-et-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apprentissage et limites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseau-de-neurones-perceptron-multicouche" class="md-nav__link">
+    <span class="md-ellipsis">
+      Réseau de neurones - Perceptron multicouche
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apprentissage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apprentissage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apprentissage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#critere-darret-risque-de-sur-apprentissage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critère d'arrêt - Risque de sur-apprentissage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparaison-des-methodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparaison des méthodes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ia">IA</h1>
+<blockquote>
+<p>Artificial intelligence or An Indian <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">4</a></sup> ? That's the question.</p>
+</blockquote>
+<h2 id="introduction">Introduction</h2>
+<h3 id="principe">Principe</h3>
+<p>Le therme d'IA désigne des méthodes qui permettent d'effectuer des prises de décisions (ou des <strong>prédictions</strong>) à partir de la reproduction d'un comportement observé dans un ensemble de données<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup>. On distinguera plusieurs grandes étapes :</p>
+<ol>
+<li>constitution d'une <strong>base de données d'apprentissage</strong>  </li>
+<li>phase d'apprentissage où l'on entraîne une <strong>fonction de prédiction</strong> (où l'on crée la fameuse IA)</li>
+<li>phase d'exploitation du modèle où l'on réalise des prédictions (ou des <strong>inférences</strong>)</li>
+</ol>
+<h3 id="typologie-des-problemes-dapprentissage">Typologie des problèmes d'apprentissage</h3>
+<p>On divise généralement les problèmes d'apprentissage en trois catégories :</p>
+<ol>
+<li><strong>Apprentissage supervisé</strong> : on connaît le lien entre les données, l'algorithme cherche à l'apprendre. Exemples : <a href="#knn">k-NN</a>, <a href="#regression">régression</a>, <a href="#reseaux-de-neurones">réseaux de neurones</a>.</li>
+<li><strong>Apprentissage non supervisé</strong> : on ne connaît pas le lien entre les données, l'algorithme cherche à le découvrir. Exemple : <a href="#k-means">k-means</a>.</li>
+<li><strong>Apprentissage par renforcement</strong> : pas de données étiquetées; un agent apprend une politique en interagissant avec un environnement et en recevant des <strong>récompenses</strong> (positives/négatives).</li>
+</ol>
+<h4 id="concernant-les-donnees-dentree">Concernant les données d'entrée</h4>
+<p>On divise la base de données d'apprentissage<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup> en trois parties : <strong>entraînement</strong>, <strong>validation</strong> et <strong>test</strong>. On détaillera plus tard la différence entre les deux dernières (pertinente pour les réseaux de neurones).</p>
+<p>L'étape de modélisation consiste à choisir une représentation pertinente des données, elle est généralement suivie d'une étape de <strong>normalisation</strong> qui consiste à ramener les données à une échelle commune pour éviter que certaines soient prédominantes. On peut par exemple les ramener entre 0 et 1.<br />
+L'intérêt de cette étape est de s'assurer que les données soient comparables, par exemple lors d'un calcul de distance dans la méthode <a href="#k-means">k-means</a>.</p>
+<p>Pour représenter les données on utilisera des vecteurs <span class="arithmatex">\(X_i\)</span> (ensemble des <strong>features</strong> de la i-ème entité) associés à des labels <span class="arithmatex">\(y_i\)</span> (ou des classes). Leurs dimensions sont indépendantes.</p>
+<h3 id="mesures-de-performance">Mesures de performance</h3>
+<p>On cherche à mesurer la performance d'un algorithme, pour cela on mesure la qualité des prédictions à partie de la base de données d'apprentissage. La forme de cette mesure dépend du type de problème que l'on cherche à résoudre.</p>
+<h4 id="en-classification-binaire">En classification binaire</h4>
+<p>Lorsque les sorties prennent des valeurs discrètes, on utilise la <strong>justesse</strong> (ou <strong>accuracy</strong>)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">3</a></sup> : il s'agit de la proportion de prédictions correctes sur l'ensemble des prédictions.<br />
+<span class="arithmatex">\(\text{justesse} = \frac{1}{N} \sum_{i=1}^N \mathbb{1}_{\hat{y}_i = y_i}\)</span>
+où <span class="arithmatex">\(\hat{y}_i\)</span> est la prédiction de l'algorithme et <span class="arithmatex">\(y_i\)</span> la valeur réelle.</p>
+<h4 id="en-regression">En régression</h4>
+<p>Lorsque les sorties prennent des valeurs continues, on utilise l'<strong>erreur moyenne quadratique</strong> (ou <strong>mean squared error</strong>) : il s'agit de la moyenne des carrés des erreurs entre la valeur réelle et la valeur prédite.</p>
+<div class="arithmatex">\[ \text{MSE} = \frac{1}{N} \sum_{i=1}^N (y_i - \hat{y}_i)^2 \]</div>
+<p><strong>Il s'agit de cette fonction que l'on cherche à minimiser lors de l'apprentissage.</strong></p>
+<h4 id="classification-multi-classes">Classification multi-classes</h4>
+<p>Face à un problème à <span class="arithmatex">\(k\)</span> classes, on utilise une <strong>matrice de confusion</strong> qui permet de visualiser les erreurs de classification.  </p>
+<table>
+  <tr>
+    <th></th>
+    <th style="background-color:#a8d5a2; color:#000;">Predicted A</th>
+    <th style="background-color:#f5a6a6; color:#000;">Predicted B</th>
+    <th style="background-color:#ffe599; color:#000;">Predicted C</th>
+  </tr>
+  <tr>
+    <th style="background-color:#a8d5a2; color:#000;">Actual A</th>
+    <td style="background-color:#8bc98b; color:#000;">50</td>
+    <td style="background-color:#f4bcbc; color:#000;">2</td>
+    <td style="background-color:#ffe8a1; color:#000;">3</td>
+  </tr>
+  <tr>
+    <th style="background-color:#f5a6a6; color:#000;">Actual B</th>
+    <td style="background-color:#f4bcbc; color:#000;">4</td>
+    <td style="background-color:#8bc98b; color:#000;">45</td>
+    <td style="background-color:#ffe8a1; color:#000;">6</td>
+  </tr>
+  <tr>
+    <th style="background-color:#ffe599; color:#000;">Actual C</th>
+    <td style="background-color:#f4bcbc; color:#000;">1</td>
+    <td style="background-color:#f4bcbc; color:#000;">5</td>
+    <td style="background-color:#8bc98b; color:#000;">40</td>
+  </tr>
+</table>
+
+<p>Les termes sur la diagonale représentent les bonnes classifications, les autres termes représentent les erreurs de classification. On peut également observer si une classe est sur-représentée ou sous-représentée.</p>
+<h3 id="en-bref">En bref</h3>
+<ol>
+<li>Base de données d'apprentissage séparée en trois parties : entraînement, validation et test</li>
+<li>Entrainement/apprentissage :<ul>
+<li>Choix d'une fonction de coût</li>
+<li>Minimisation de la fonction de coût sur la base d'apprentissage</li>
+<li>Validation de la fonction de coût sur la base de validation</li>
+</ul>
+</li>
+<li>Inférence : utilisation</li>
+</ol>
+<h2 id="regression">Régression</h2>
+<h3 id="regression-lineaire">Régression linéaire</h3>
+<p>La régression linéaire est un algorithme d'apprentissage supervisé qui cherche à établir une relation entre les variables d'entrée et de sortie. Il s'agit d'un modèle paramétrique qui cherche à minimiser la somme des carrés des erreurs entre les valeurs prédites et les valeurs réelles.</p>
+<h4 id="fonction-cout-et-descente-de-gradient">Fonction coût et descente de gradient</h4>
+<p>On utilise l'<strong>erreur quadratique moyenne</strong> (ou <strong>mean squared error</strong>) comme fonction coût :</p>
+<div class="arithmatex">\[ \text{MSE} = \frac{1}{N} \sum_{i=1}^N (y_i - f(x_i))^2 \]</div>
+<p>On utilisera donc le minimum de cette fonction; dans le cas d'une régression « simple » (une droite par exemple) il existe une solution <strong>analytique</strong>, la <strong>méthode des moindres carrés</strong>.<br />
+Pour des problèmes plus complexes, il n'existe pas toujours de solution analytique; on utilisera alors la <strong>descente de gradient</strong>. Il s'agit d'une méthode itérative qui consiste à calculer le gradient de la fonction coût par rapport aux paramètres du modèle et à les mettre à jour dans la direction opposée au gradient.  </p>
+<div class="arithmatex">\[ \theta_{t+1} = \theta_t - \alpha \nabla J(\theta_t), \alpha \in \mathbb{R}_{+}^{*} \]</div>
+<p>où <span class="arithmatex">\(\alpha\)</span> est le <strong>taux d'apprentissage</strong> (ou <strong>learning rate</strong>) qui permet de contrôler la vitesse de convergence de l'algorithme. Il s'agit d'un paramètre important à régler : trop petit, il faudra beaucoup d'itérations pour converger; trop grand, il y a un risque de divergence.</p>
+<p>Cette méthode peut s'illustrer ainsi :  </p>
+<figure>
+<p><img alt="Illustration of gradient descent" src="https://upload.wikimedia.org/wikipedia/commons/7/79/Gradient_descent.png" /></p>
+</figure>
+<p>On descend le long du gradient jusqu'à atteindre un minimum (comme si on descendait dans une cuve).</p>
+<h3 id="regression-logistique">Régression logistique</h3>
+<p>La régression logistique est une technique statistique pour modéliser la probabilité d'un événement binaire. Elle modélise <strong>la probabilité d'appartenance à une classe</strong> en utilisant la fonction logistique (ou sigmoïde) :</p>
+<div class="arithmatex">\[ P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x)}} \]</div>
+<p>Avec ici deux paramètres (cas particulier).</p>
+<h2 id="knn-et-k-means">KNN et K-means</h2>
+<h3 id="knn">KNN</h3>
+<p>Le K plus proches voisins (ou <strong>KNN</strong>) est un algorithme d'apprentissage supervisé qui cherche à classer un point en fonction de ses voisins les plus proches. Il s'agit d'un algorithme de classification dit de <strong>lazy-learning</strong> car il ne présente pas de phase d'apprentissage.</p>
+<p>L'algorithme procède en trois grandes étapes :</p>
+<ul>
+<li>calculer la distance entre le point à classer et tous les points de la base d'apprentissage</li>
+<li>trier les distances et sélectionner les <span class="arithmatex">\(k\)</span> plus proches voisins</li>
+<li>prédire la classe du point à classer en fonction des classes des <span class="arithmatex">\(k\)</span> plus proches voisins (majorité simple ou pondérée par la distance)</li>
+</ul>
+<p>Pour évaluer la pertinence des prédictions, on utilise une matrice de confusion qui permet de visualiser les erreurs de classification.</p>
+<h3 id="k-means">K-means</h3>
+<p>L'algorithme K-means est un algorithme d'apprentissage non supervisé qui cherche à regrouper les données en <span class="arithmatex">\(k\)</span> clusters. Il s'agit d'un algorithme itératif où les similitudes entre les données apparaissent comme des nuages de points : ce sont les <strong>clusters</strong>.</p>
+<p>On construit ces <span class="arithmatex">\(k\)</span> clusters (on a imposé <span class="arithmatex">\(k\)</span>) par l'association de chaque point à son centre de gravité (ou <strong>centroïde</strong>).</p>
+<p>L'algorithme débute avec des centroïdes aléatoires, puis il procède en deux étapes :</p>
+<ol>
+<li><strong>Attribution</strong> : chaque point est associé au centroïde le plus proche (on utilise la distance euclidienne)</li>
+<li><strong>Mise à jour</strong> : on calcule le nouveau centroïde de chaque cluster en prenant la moyenne des points qui lui sont associés</li>
+</ol>
+<p>On répète ces deux étapes jusqu'à ce que les centroïdes ne changent plus (ou que la variation soit jugée suffisamment faible) ou que le nombre maximal d'itérations soit atteint.<br />
+Pour déterminer le nombre de clusters, on utilise la méthode du coude qui consiste à tracer la somme des carrés des distances entre les points et leurs centroïdes en fonction du nombre de clusters. On cherche le point où la courbe commence à se stabiliser (le coude).</p>
+<figure>
+<p><img alt="Elbow method" src="../../images/elbow_method.png" /></p>
+</figure>
+<h2 id="reseaux-de-neurones">Réseaux de neurones</h2>
+<h3 id="perceptron">Perceptron</h3>
+<p>Le neurone artificiel ou <strong>neurone formel</strong> (ou encore <em>perceptron</em>) est l'unité élémentaire de traitement d'un réseau neuronal.  </p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph Entrées
+        x1(["x₁"])
+        x2(["x₂"])
+        x3(["x₃"])
+        xn(["xₙ"])
+    end
+
+    x1 --&gt; |w₁| sum
+    x2 --&gt; |w₂| sum
+    x3 --&gt; |w₃| sum
+    xn --&gt; |wₙ| sum
+
+    subgraph "Sommation pondérée"
+        sum((Σ)) --&gt; |"z = Σwᵢxᵢ + b₀"| f
+    end
+
+    b([biais b₀]) --&gt; sum
+
+    subgraph "Activation"
+        f["f(z)"] --&gt; |"ŷ = f(z)"| y
+    end
+
+    y(["Sortie ŷ"])
+
+    classDef inputs fill:#b3e0ff,stroke:#0066cc,stroke-width:1px,color:#000000
+    classDef operation fill:#ffb3cc,stroke:#cc0044,stroke-width:2px,color:#000000
+    classDef bias fill:#b3ffb3,stroke:#008800,stroke-width:1px,color:#000000
+    classDef activation fill:#ccccff,stroke:#4444cc,stroke-width:2px,color:#000000
+    classDef output fill:#ffe6b3,stroke:#cc7700,stroke-width:1px,color:#663800
+
+    class x1,x2,x3,xn inputs
+    class sum operation
+    class b bias
+    class f activation
+    class y output</code></pre>
+<h4 id="fonctionnement-mathematique">Fonctionnement mathématique</h4>
+<ol>
+<li><strong>Entrées pondérées</strong>: Chaque entrée <span class="arithmatex">\(x_i\)</span> est multipliée par son poids associé <span class="arithmatex">\(w_i\)</span></li>
+<li><strong>Sommation</strong>: Les produits sont additionnés avec le biais <span class="arithmatex">\(b_0\)</span>: <span class="arithmatex">\(z = \sum_{i=1}^{n} w_i x_i + b_0\)</span></li>
+<li><strong>Activation</strong>: La somme est passée à travers la fonction d'activation: <span class="arithmatex">\(\hat{y} = f(z)\)</span></li>
+</ol>
+<p>La fonction d'activation <span class="arithmatex">\(f\)</span> peut prendre différentes formes (sigmoïde, ReLU, tanh, etc.) selon l'application visée. Ces fonctions <strong>ne sont pas linéaires</strong>.</p>
+<ol>
+<li>La relation entre les entrées et la sortie est appelée <strong>équation de propagation</strong>.</li>
+</ol>
+<h3 id="apprentissage-et-limites">Apprentissage et limites</h3>
+<p>Lors d'une utilisation d'un neurone comme <em>classifieur</em> le neurone n'est capable que de séparer des <strong>données linéairement séparables</strong>. Par exemple, il ne pourra pas séparer des données en forme de cercle.<br />
+On utilise alors des réseaux de neurones qui sont des ensembles de neurones organisés en couches.</p>
+<h3 id="reseau-de-neurones-perceptron-multicouche">Réseau de neurones - Perceptron multicouche</h3>
+<p>Un réseau de neurones est constitué de plusieurs couches de neurones interconnectés. Cette interconnexion se fait entre couches successives :</p>
+<ul>
+<li>une <strong>couche d'entrée</strong> qui réalise une simple copie  <ul>
+<li>des couches intermédiaires (ou <strong>couches cachées</strong>)  <ul>
+<li>qui ont des nombres de neurones différents mais  </li>
+<li>qui ont <strong>la même fonction d'activation</strong>  </li>
+</ul>
+</li>
+<li>une <strong>couche de sortie</strong></li>
+</ul>
+</li>
+</ul>
+<pre class="mermaid"><code>flowchart LR
+    %% Couche d'entrée
+    subgraph "Couche d'entrée"
+        x1(["x₁"])
+        x2(["x₂"])
+        x3(["x₃"])
+    end
+
+    %% Première couche cachée
+    subgraph "Couche cachée 1"
+        h11((h₁¹))
+        h12((h₂¹))
+        h13((h₃¹))
+    end
+
+    %% Deuxième couche cachée
+    subgraph "Couche cachée 2"
+        h21((h₁²))
+        h22((h₂²))
+    end
+
+    %% Couche de sortie
+    subgraph "Couche de sortie"
+        y1(["ŷ₁"])
+        y2(["ŷ₂"])
+    end
+
+    %% Connexions entre couche d'entrée et première couche cachée
+    x1 --&gt; h11 &amp; h12 &amp; h13
+    x2 --&gt; h11 &amp; h12 &amp; h13
+    x3 --&gt; h11 &amp; h12 &amp; h13
+
+    %% Connexions entre première et deuxième couche cachée
+    h11 --&gt; h21 &amp; h22
+    h12 --&gt; h21 &amp; h22
+    h13 --&gt; h21 &amp; h22
+
+    %% Connexions entre deuxième couche cachée et couche de sortie
+    h21 --&gt; y1 &amp; y2
+    h22 --&gt; y1 &amp; y2
+
+    %% Styles pour les différentes parties du diagramme
+    classDef inputs fill:#b3e0ff,stroke:#0066cc,stroke-width:1px,color:#000000
+    classDef hidden1 fill:#ffb3cc,stroke:#cc0044,stroke-width:2px,color:#000000
+    classDef hidden2 fill:#ccccff,stroke:#4444cc,stroke-width:2px,color:#000000
+    classDef outputs fill:#ffe6b3,stroke:#cc7700,stroke-width:1px,color:#000000
+
+    class x1,x2,x3 inputs
+    class h11,h12,h13 hidden1
+    class h21,h22 hidden2
+    class y1,y2 outputs</code></pre>
+<h3 id="apprentissage">Apprentissage</h3>
+<p>On cherche à minimiser la fonction coût sur l'ensemble des données d'apprentissage, qu'on peut choisir comme étant la <strong>MSE</strong>.  </p>
+<p>Minimiser la fonction coût revient à optimiser les poids du réseau de neurones. On utilise la <strong>rétropropagation</strong> (ou <strong>backpropagation</strong>) qui consiste à calculer le gradient de la fonction coût par rapport aux poids du réseau et à les mettre à jour en suivant la direction opposée du gradient.  </p>
+<p>On peut effectuer ce calcul sur un groupe de données appelé <strong>batch</strong> afin de limiter le temps/coût de calcul.</p>
+<h4 id="critere-darret-risque-de-sur-apprentissage">Critère d'arrêt - Risque de sur-apprentissage</h4>
+<p>A force d'itérations, le réseau de neurones peut apprendre à mémoriser les données d'apprentissage au lieu d'apprendre à généraliser. On parle de <strong>sur-apprentissage</strong> (ou <strong>overfitting</strong>). Pour éviter cela, on utilise un ensemble de validation qui permet de vérifier la performance du modèle sur des données non vues. On arrête l'apprentissage lorsque la performance sur l'ensemble de validation commence à diminuer.</p>
+<h2 id="comparaison-des-methodes">Comparaison des méthodes</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Modèle linéaire (régression ou classification)</th>
+<th>k plus proches voisins</th>
+<th>Réseaux de neurones (éventuellement profonds)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Temps de calcul à l'apprentissage</strong></td>
+<td>+ Inversion de matrice et calcul de <span class="arithmatex">\(X^T X\)</span> <span class="arithmatex">\(\mathcal{O}(d^3 + nd^2)\)</span> mais existence de méthodes numériques plus efficaces</td>
+<td>++ Stockage des données de la base de donnée d'entraînement</td>
+<td>-- Procédure longue et coûteuse notamment sur de grandes bases de données</td>
+</tr>
+<tr>
+<td><strong>Temps de calcul à la prédiction</strong></td>
+<td>++ 1 Produit matrice vecteur <span class="arithmatex">\(\mathcal{O}(d \times p)\)</span></td>
+<td>- Tri d'un tableau de distances <span class="arithmatex">\(\mathcal{O}(n \log(n))\)</span></td>
+<td>+ Séquence de produits matrice vecteur</td>
+</tr>
+<tr>
+<td><strong>Performances avec peu de données d'entraînement</strong></td>
+<td>++ Peu de paramètres à apprendre → bonnes performances avec peu de données</td>
+<td>+ Performances correctes avec peu de voisins</td>
+<td>-- Peu de paramètres par couche conduisent à un modèle proche du linéaire</td>
+</tr>
+<tr>
+<td><strong>Performances avec données abondantes</strong></td>
+<td>- Peu de paramètres apprenables</td>
+<td>+ Réglage du nombre de voisins</td>
+<td>++ Grande flexibilité de la fonction de prédiction</td>
+</tr>
+<tr>
+<td><strong>Performances avec données complexes (image / texte)</strong></td>
+<td>- Représentation des entrées difficile à adapter efficacement</td>
+<td>- Difficile de choisir une distance correcte</td>
+<td>++ Possibilité d'adapter les couches cachées aux propriétés des entrées</td>
+</tr>
+</tbody>
+</table>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:2">
+<p>Bien évidemment acquises en toute légalité comme <a href="https://www.404media.co/nvidia-ai-scraping-foundational-model-cosmos-project/">Nvidia</a>, <a href="https://www.wired.com/story/new-documents-unredacted-meta-copyright-ai-lawsuit/">Meta</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Toujours acquise dans le respect des droits d'auteurs, n'<a href="https://www.nytimes.com/2023/12/27/business/media/new-york-times-open-ai-microsoft-lawsuit.html">est</a>-<a href="https://torrentfreak.com/authors-openais-fair-use-argument-in-copyright-dispute-is-misplaced-230928/">ce</a> <a href="https://torrentfreak.com/authors-sue-nvidia-for-training-ai-on-pirated-books-240311/">pas</a> ?&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>A ne pas confondre avec la précision (ou <strong>precision</strong>) qui permet de mesurer la proportion de faux positifs dans les prédictions.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:1">
+<p>Ceci est une vraie question <a href="https://www.clubic.com/actualite-567732-cette-startup-a-berne-microsoft-avec-700-indiens-deguises-en-ia.html">et Microsoft c'est fait avoir</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../7_sql/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SQL">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                SQL
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../english/" class="md-footer__link md-footer__link--next" aria-label="Next: Home">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Licensed under CC BY-SA 4.0 International License - Thomas "Valdr687" Casanova
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Valdr687/docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
