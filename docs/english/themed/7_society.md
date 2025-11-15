@@ -109,6 +109,15 @@ Department supposed to "modernize federal technology and software to maximize go
 | resentment                | A feeling of anger or displeasure at being treated unfairly.                               |
 | hotspot                   | A place that is very popular or busy.                                                      |
 
+### Communication
+
+|    |     |
+| -- | --- |
+| to stutter | Bégayer (maladie)|
+| to stammer | Hésiter en parlant (peur, stress) |
+| to ramble  | Parler de façon décousue |
+| the layman | Le profane (non-expert) |
+
 [^1]: Copied and pasted from [Oxfam](https://www.oxfam.org/en/takers-not-makers-unjust-poverty-and-unearned-wealth-colonialism)
 [^2]: Et oui ! Disney n'est pas woke, ils font du marketing !
 [^3]: J'aurais aimé que ce soit une blague... [Article complet](https://www.france24.com/en/europe/20250110-musk-praises-afd-leader-reiterates-support-german-far-right-party)
