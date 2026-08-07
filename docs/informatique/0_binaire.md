@@ -8,7 +8,7 @@ Un octet est composé de 8 bits (bit provient de la contraction en anglais de bi
 
 Le codage d'un nombre entier se fait donc en base 2 (puisqu'un bit peut avoir 2 valeurs différentes), comme le montre le schéma suivant :
 
-![illustration passage entier vers binaire](../images/structCodageOctet.png)
+![illustration passage entier vers binaire](./images/structCodageOctet.png)
 
 >Schéma ci dessus provenant de dkryton.fr
 

@@ -152,7 +152,7 @@ On répète ces deux étapes jusqu'à ce que les centroïdes ne changent plus (o
 Pour déterminer le nombre de clusters, on utilise la méthode du coude qui consiste à tracer la somme des carrés des distances entre les points et leurs centroïdes en fonction du nombre de clusters. On cherche le point où la courbe commence à se stabiliser (le coude).
 
 <figure markdown="1">
-  ![Elbow method](../images/elbow_method.png)
+  ![Elbow method](./images/elbow_method.png)
 </figure>
 
 ## Réseaux de neurones

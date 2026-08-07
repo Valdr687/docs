@@ -1,0 +1,117 @@
+[project]
+site_name = "Vervada - Documentation & Fiches de cours"
+site_url = "https://vervda.me/docs"
+copyright = "Licensed under CC BY-SA 4.0 International License - Thomas \"Valdr687\" Casanova"
+
+nav = [
+  { "Home" = "index.md" },
+  { "Centrale" = [
+    { "RSE et VSS" = [
+      { "Introduction" = "egalite/index.md" },
+    ]},
+    { "Gestion de projet" = [
+      { "Fondamentaux de la gestion de projet" = "gestion_de_projet/s1.md" },
+      { "L'essentiel pour démarrer un projet" = "gestion_de_projet/s2.md" },
+      { "Outils avancés de gestion de projet" = "gestion_de_projet/s3.md" },
+      { "Démarche de gestion des risques" = "gestion_de_projet/s4.md" },
+    ]},
+  ]},
+  { "Informatique" = [
+    { "Binaire" = "informatique/0_binaire.md" },
+    { "Tracé de courbe" = "informatique/1_trace_de_courbe.md" },
+    { "Fichiers textes" = "informatique/2_fichiers_textes.md" },
+    { "Stratégies" = "informatique/3_strategies.md" },
+    { "Complexité" = "informatique/4_complexite.md" },
+    { "Traitement de données" = "informatique/5_traitement_de_donnees.md" },
+    { "Analyse" = "informatique/6_analyse.md" },
+    { "SQL" = "informatique/7_sql.md" },
+    { "IA" = "informatique/8_ia.md" },
+  ]},
+  { "Anglais" = [
+    { "Home" = "english/index.md" },
+    { "Générique" = [
+      { "Grammaire" = "english/generic/0_grammar.md" },
+      { "Vocabulaire en vrac" = "english/generic/1_miscellaneous.md" },
+    ]},
+    { "Thématiques" = [
+      { "Science" = "english/themed/1_science.md" },
+      { "The Media" = "english/themed/2_the_media.md" },
+      { "Work" = "english/themed/3_work.md" },
+      { "The institutions" = "english/themed/4_institutions.md" },
+      { "Environment" = "english/themed/5_environment.md" },
+      { "Violences" = "english/themed/6_violences.md" },
+      { "Society" = "english/themed/7_society.md" },
+    ]},
+  ]},
+  { "Espagnol" = [
+    { "Home" = "spanish/index.md" },
+    { "Genérico" = [
+      { "Gramática" = "spanish/generic/0_grammar.md" },
+      { "Vocabulario variado" = "spanish/generic/1_miscellaneous.md" },
+      { "Políticos" = "spanish/generic/2_politicos.md" },
+    ]},
+    { "Temáticas" = [
+      { "Ciencia" = "spanish/themed/1_ciencia.md" },
+      { "Los medios de comunicación" = "spanish/themed/2_los_medios.md" },
+      { "El trabajo" = "spanish/themed/3_trabajo.md" },
+      { "Las instituciones" = "spanish/themed/4_instituciones.md" },
+      { "Medio ambiente" = "spanish/themed/5_medio_ambiente.md" },
+      { "Violencias" = "spanish/themed/6_violencias.md" },
+      { "Sociedad" = "spanish/themed/7_sociedad.md" },
+    ]},
+  ]},
+]
+
+extra_css = ["https://unpkg.com/katex@0/dist/katex.min.css"]
+extra_javascript = [
+  "javascripts/katex.js",
+  "https://unpkg.com/katex@0/dist/katex.min.js",
+  "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js",
+]
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/Valdr687/docs"
+
+[project.theme]
+features = ["navigation.footer"]
+language = "fr"
+
+[[project.theme.palette]]
+# Dark Mode
+scheme = "slate"
+primary = "green"
+accent = "deep purple"
+
+[project.theme.palette.toggle]
+icon = "material/weather-sunny"
+name = "Dark mode"
+
+[[project.theme.palette]]
+# Light Mode
+scheme = "default"
+primary = "blue"
+accent = "deep orange"
+
+[project.theme.palette.toggle]
+icon = "material/weather-night"
+name = "Light mode"
+
+[project.markdown_extensions]
+footnotes = {}
+attr_list = {}
+md_in_html = {}
+def_list = {}
+"pymdownx.blocks.caption" = {}
+"pymdownx.tilde" = {}
+"pymdownx.arithmatex" = { generic = true }
+"pymdownx.tasklist" = { custom_checkbox = true }
+"pymdownx.superfences" = {
+  custom_fences = [
+    {
+      name = "mermaid",
+      class = "mermaid",
+      format = "pymdownx.superfences.fence_code_format",
+    },
+  ],
+}
