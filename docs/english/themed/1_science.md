@@ -45,7 +45,7 @@ Victor Miller ran for mayor of Cheyenne with an AI bot, VIC. He claimed that if 
 ### Facial recognition and video surveillance
 
 * **France**  
-The use of algorithmic video surveillance (or *VSA* in french) was authorized fo the Olympic Games in Paris. But in realty its adoption was broader than it, the so-called experiment was supposed to end in march but the government is trying to extend it, in clear deny of the constitutional council's decision.[^3]
+The use of algorithmic video surveillance (or *VSA* in french) was authorized for the Olympic Games in Paris. But in reality its adoption was broader than it, the so-called experiment was supposed to end in march but the government is trying to extend it, in clear denial of the constitutional council's decision.[^3]
 
 * **Japan, facial recognition to withdraw money**  
 Seven Bank has introduced a service allowing its account holders to deposit and withdraw cash using facial recognition technology at 26,000 automated teller machines across the country.[^4]

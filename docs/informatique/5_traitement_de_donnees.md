@@ -24,7 +24,7 @@
 
 ### Opération sur les dictionnaires
 
-Un dictionnaire est ensemble de données structurées dont les valeurs peuvent être de n'importe quel type (simple ou complexe) et qui contrairement au tableau, sont accessibles par des clé et non des indices.
+Un dictionnaire est un ensemble de données structurées dont les valeurs peuvent être de n'importe quel type (simple ou complexe) et qui contrairement au tableau, sont accessibles par des clés et non des indices.
 
 | Objectif                                                                 | Code Python                   |
 |--------------------------------------------------------------------------|-------------------------------|

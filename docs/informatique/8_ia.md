@@ -6,7 +6,7 @@
 
 ### Principe
 
-Le therme d'IA désigne des méthodes qui permettent d'effectuer des prises de décisions (ou des **prédictions**) à partir de la reproduction d'un comportement observé dans un ensemble de données[^2]. On distinguera plusieurs grandes étapes :
+Le terme d'IA désigne des méthodes qui permettent d'effectuer des prises de décisions (ou des **prédictions**) à partir de la reproduction d'un comportement observé dans un ensemble de données[^2]. On distinguera plusieurs grandes étapes :
 
 1. constitution d'une **base de données d'apprentissage**  
 1. phase d'apprentissage où l'on entraîne une **fonction de prédiction** (où l'on crée la fameuse IA)
@@ -301,7 +301,7 @@ A force d'itérations, le réseau de neurones peut apprendre à mémoriser les d
 | **Performances avec données abondantes** | - Peu de paramètres apprenables | + Réglage du nombre de voisins | ++ Grande flexibilité de la fonction de prédiction |
 | **Performances avec données complexes (image / texte)** | - Représentation des entrées difficile à adapter efficacement | - Difficile de choisir une distance correcte | ++ Possibilité d'adapter les couches cachées aux propriétés des entrées |
 
-[^1]: Ceci est une vraie question [et Microsoft c'est fait avoir](https://www.clubic.com/actualite-567732-cette-startup-a-berne-microsoft-avec-700-indiens-deguises-en-ia.html).
+[^1]: Ceci est une vraie question [et Microsoft s'est fait avoir](https://www.clubic.com/actualite-567732-cette-startup-a-berne-microsoft-avec-700-indiens-deguises-en-ia.html).
 [^2]: Bien évidemment acquises en toute légalité comme [Nvidia](https://www.404media.co/nvidia-ai-scraping-foundational-model-cosmos-project/), [Meta](https://www.wired.com/story/new-documents-unredacted-meta-copyright-ai-lawsuit/)
 [^3]: Toujours acquise dans le respect des droits d'auteurs, n'[est](https://www.nytimes.com/2023/12/27/business/media/new-york-times-open-ai-microsoft-lawsuit.html)-[ce](https://torrentfreak.com/authors-openais-fair-use-argument-in-copyright-dispute-is-misplaced-230928/) [pas](https://torrentfreak.com/authors-sue-nvidia-for-training-ai-on-pirated-books-240311/) ?
 [^4]: A ne pas confondre avec la précision (ou **precision**) qui permet de mesurer la proportion de faux positifs dans les prédictions.

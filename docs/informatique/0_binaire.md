@@ -62,7 +62,7 @@ On code les nombres sur 32 bits avec trois composantes :
 #### Méthode
 
 - On code le nombre en binaire
-- On décale $n$ fois la virgule jusqu'à on ait un 1 suivi du reste du nombre, ce qui reste après est la _mantisse_.
+- On décale $n$ fois la virgule jusqu'à ce qu'on ait un 1 suivi du reste du nombre, ce qui reste après est la _mantisse_.
   Par example :
   1000 devient 1,000 ; 0,100 devient 1,00
 - Le décalage est noté $2^n$, on ajoute au décalage $2^{a-1}-1$ avec $a$ le nombre de bits sur lequel on code l'exposant afin de coder des décalages positifs **et** négatifs.
